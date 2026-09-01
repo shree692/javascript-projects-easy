@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: #1f2937;
+}
+
+.container {
+    width: min(92vw, 460px);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 22px;
+    padding: 32px 28px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+    backdrop-filter: blur(4px);
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #111827;
+}
+
+p {
+    margin: 0 0 22px;
+    color: #4b5563;
+    font-size: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    background: #f9fafb;
+    font-size: 1rem;
+    color: #111827;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6b7280;
+    box-shadow: 0 0 0 4px rgba(107, 114, 128, 0.12);
+}
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+button {
+    margin-top: 18px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 18px;
+    background: #111827;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.18s ease, background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 16px rgba(17, 24, 39, 0.12);
+}
+
+button:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#result {
+    margin-top: 22px;
+    min-height: 26px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(243, 244, 246, 0.8);
+    padding: 10px 12px;
+}
