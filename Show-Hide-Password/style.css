@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #000;
+    background:
+        linear-gradient(rgba(248, 250, 252, 0.8), rgba(248, 250, 252, 0.82)),
+        url('https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: #0f172a;
+}
+
+.container {
+    width: min(92vw, 440px);
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 22px;
+    padding: 30px 28px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    backdrop-filter: blur(4px);
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #475569;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #dbe2ea;
+    border-radius: 14px;
+    background: #f8fafc;
+    padding: 0 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-container:focus-within {
+    border-color: #64748b;
+    box-shadow: 0 0 0 4px rgba(100, 116, 139, 0.1);
+}
+
+input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #0f172a;
+    padding: 16px 0;
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+#eye-icon {
+    min-width: 52px;
+    text-align: center;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+#eye-icon:hover {
+    background: #cbd5e1;
+}
+
+#eye-icon:active {
+    transform: scale(0.98);
+}
