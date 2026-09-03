@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+	--ink: #243139;
+	--muted: #68747a;
+	--paper: rgba(255, 253, 248, 0.94);
+	--line: #d9d5cb;
+	--accent: #b65f45;
+	--accent-dark: #8e4633;
+	--error: #a84435;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	display: grid;
+	place-items: center;
+	padding: 24px;
+	color: var(--ink);
+	font-family: 'DM Sans', sans-serif;
+	background-color: #f6f1e8;
+	background-image: linear-gradient(rgba(246, 241, 232, 0.68), rgba(246, 241, 232, 0.68)), url('https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&w=2000&q=85');
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.container {
+	width: min(100%, 440px);
+	padding: 48px 44px 44px;
+	border: 1px solid rgba(255, 255, 255, 0.72);
+	border-radius: 4px;
+	background: var(--paper);
+	box-shadow: 0 24px 60px rgba(54, 47, 37, 0.16);
+}
+
+h2 {
+	margin: 0 0 30px;
+	color: var(--ink);
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: clamp(2rem, 7vw, 2.65rem);
+	line-height: 1.08;
+	letter-spacing: 0;
+}
+
+form {
+	display: grid;
+	gap: 11px;
+}
+
+label {
+	color: var(--muted);
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+input {
+	width: 100%;
+	min-height: 52px;
+	padding: 0 15px;
+	border: 1px solid var(--line);
+	border-radius: 2px;
+	outline: none;
+	color: var(--ink);
+	background: #fffefa;
+	font: inherit;
+	font-size: 1rem;
+	transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input::placeholder {
+	color: #a3a5a0;
+}
+
+input:focus {
+	border-color: var(--accent);
+	box-shadow: 0 0 0 3px rgba(182, 95, 69, 0.13);
+}
+
+#message {
+	min-height: 20px;
+	font-size: 0.82rem;
+	line-height: 1.45;
+}
+
+button {
+	min-height: 52px;
+	margin-top: 7px;
+	border: 0;
+	border-radius: 2px;
+	color: #fffaf4;
+	background: var(--accent);
+	cursor: pointer;
+	font: inherit;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	transition: background-color 160ms ease, transform 160ms ease;
+}
+
+button:hover {
+	background: var(--accent-dark);
+	transform: translateY(-1px);
+}
+
+button:active {
+	transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+	body {
+		padding: 16px;
+	}
+
+	.container {
+		padding: 36px 24px 30px;
+	}
+}
