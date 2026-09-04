@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #26352d;
+    --olive: #52634a;
+    --terracotta: #c8664d;
+    --cream: #f7f1e7;
+    --paper: #fffdf8;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: start center;
+    padding: clamp(46px, 8vh, 88px) 24px 40px;
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #d8d0c0;
+    background-image: linear-gradient(rgba(28, 34, 29, 0.66), rgba(28, 34, 29, 0.66)),
+        url('https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    position: relative;
+    width: min(100%, 760px);
+    overflow: hidden;
+    border: 10px solid var(--paper);
+    border-radius: 2px;
+    background: var(--paper);
+    box-shadow: 0 28px 65px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(247, 241, 231, 0.2);
+}
+
+.img-wrap {
+    width: 100%;
+    display: flex;
+    transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.slide {
+    position: relative;
+    min-width: 100%;
+    overflow: hidden;
+    background: var(--olive);
+}
+
+.slide::after {
+    position: absolute;
+    inset: 35% 0 0;
+    content: '';
+    background: linear-gradient(transparent, rgba(22, 31, 25, 0.78));
+    pointer-events: none;
+}
+
+.slide img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    display: block;
+    object-fit: cover;
+    transition: transform 900ms ease;
+}
+
+.slide:hover img {
+    transform: scale(1.035);
+}
+
+.dish-info {
+    position: absolute;
+    z-index: 1;
+    right: 34px;
+    bottom: 30px;
+    left: 34px;
+    color: var(--paper);
+}
+
+.dish-number,
+.menu-label {
+    color: #f0c3a9;
+    font-family: Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.dish-info h1 {
+    margin: 7px 0 4px;
+    font-size: clamp(1.7rem, 5vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.dish-info p {
+    margin: 0;
+    color: rgba(255, 253, 248, 0.86);
+    font-size: clamp(0.82rem, 2vw, 1rem);
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    transform: translateY(-50%);
+    border: 0;
+    border: 1px solid rgba(255, 253, 248, 0.75);
+    border-radius: 50%;
+    color: var(--paper);
+    background: rgba(38, 53, 45, 0.5);
+    cursor: pointer;
+    font-family: Georgia, serif;
+    font-size: 29px;
+    line-height: 1;
+    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.btn:hover {
+    border-color: var(--paper);
+    background: var(--terracotta);
+    transform: translateY(-50%) scale(1.06);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--terracotta);
+    outline-offset: 3px;
+}
+
+.menu-label {
+    position: absolute;
+    z-index: 2;
+    top: 22px;
+    left: 28px;
+    color: var(--paper);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.prev {
+    left: 14px;
+}
+
+.next {
+    right: 14px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 28px 12px 24px;
+        background-attachment: scroll;
+    }
+
+    .btn {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .dish-info {
+        right: 22px;
+        bottom: 22px;
+        left: 22px;
+    }
+
+    .menu-label {
+        top: 17px;
+        left: 18px;
+    }
+}
